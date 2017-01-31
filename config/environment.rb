@@ -1,4 +1,5 @@
 require 'bundler'
+require 'find'
 Bundler.require
 
 module Concerns
