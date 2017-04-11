@@ -44,7 +44,7 @@ describe "Song Basics" do
     end
   end
 
-  describe '.create' do
+  describe '.create', focus: true do
     it 'initializes and saves the song' do
       song = Song.create("In the Aeroplane Over the Sea")
 
