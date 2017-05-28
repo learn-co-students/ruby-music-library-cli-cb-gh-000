@@ -1,0 +1,30 @@
+
+[1mFrom:[0m /home/edmundo096/code/labs/ruby-music-library-cli-cb-gh-000/lib/music_library_controller.rb @ line 27 MusicLibraryController#call:
+
+    [1;34m11[0m: [32mdef[0m [1;34mcall[0m
+    [1;34m12[0m:   puts [31m[1;31m"[0m[31m[1;31m"[0m[31m[0m[31m[1;31m"[0m[31m[0m
+    [1;34m13[0m:   [35mUsage[0m:
+    [1;34m14[0m:     list songs|artists|genres
+    [1;34m15[0m:     list artist|genre
+    [1;34m16[0m:       <name>
+    [1;34m17[0m:     play song
+    [1;34m18[0m:       <song number>
+    [1;34m19[0m: 
+    [1;34m20[0m:   exit to close
+    [1;34m21[0m:   [31m[1;31m"[0m[31m[1;31m"[0m[31m[0m[31m[1;31m"[0m[31m[0m
+    [1;34m22[0m: 
+    [1;34m23[0m:   command = gets.strip
+    [1;34m24[0m: 
+    [1;34m25[0m:   [32muntil[0m command.eql?([31m[1;31m"[0m[31mexit[1;31m"[0m[31m[0m)
+    [1;34m26[0m:     [32mif[0m result = command.match([35m[1;35m/[0m[35mlist (songs|artists|genres)[1;35m/[0m[35m[0m)
+ => [1;34m27[0m:       binding.pry
+    [1;34m28[0m:       list_all(result[[1;34m0[0m])
+    [1;34m29[0m:     [32melsif[0m command.match([35m[1;35m/[0m[35mlist (artist|genre)[1;35m/[0m[35m[0m)
+    [1;34m30[0m:       puts [31m[1;31m"[0m[31m2[1;31m"[0m[31m[0m
+    [1;34m31[0m:     [32melsif[0m command.match([35m[1;35m/[0m[35mplay song[1;35m/[0m[35m[0m)
+    [1;34m32[0m:       puts [31m[1;31m"[0m[31m3[1;31m"[0m[31m[0m
+    [1;34m33[0m:     [32mend[0m
+    [1;34m34[0m:     command = gets.strip
+    [1;34m35[0m:   [32mend[0m
+    [1;34m36[0m: [32mend[0m
+
