@@ -57,7 +57,7 @@ describe "Concerns::Findable" do
       end
 
       it "invokes .find_by_name instead of re-coding the same functionality" do
-        expect(Artist).to receive(:find_by_name)
+        expect(Artist).to receive(:find_by_name).at_least(:once)
         Artist.find_or_create_by_name("Slowdive")
       end
 
