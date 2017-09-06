@@ -58,17 +58,16 @@ class MusicLibraryController
 
 	def list_songs_by_artist
 		puts "Please enter the name of an artist:"
-		name = gets
+		name = gets.strip
 		Artist.find_or_create_by_name(name).songs.sort {|song1, song2| song1.name <=> song2.name}.each_with_index do |song, index|
 			genre = song.genre
-			puts (index + 1).to_s + ". " + song.name + " - " + genre.name
-			break
+			puts "#{(index + 1).to_s} . #{song.name}  - #{song.genre.name}"
 		end
 	end
 
 	def list_songs_by_genre
 		puts "Please enter the name of a genre:"
-		name = gets
+		name = gets.strip
 		Genre.find_or_create_by_name(name).songs.sort {|song1, song2| song1.name <=> song2.name}.each_with_index do |song, index|
 			artist = song.artist
 			puts (index + 1).to_s + ". " + artist.name + " - " + song.name
