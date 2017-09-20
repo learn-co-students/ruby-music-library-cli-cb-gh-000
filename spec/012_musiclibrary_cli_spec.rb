@@ -1,77 +1,65 @@
-describe 'Music Library CLI' do
+require "spec_helper"
 
-  it 'allows a user to list songs' do
-    music_library_controller = MusicLibraryController.new("./spec/fixtures/mp3s")
+describe "CLI Commands" do
+  let(:music_library_controller) { MusicLibraryController.new("./spec/fixtures/mp3s") }
 
-    expect(MusicLibraryController).to receive(:new).and_return(music_library_controller)
-    expect(music_library_controller).to receive(:gets).and_return("list songs", "exit")
+  describe "'list songs'" do
+    it "triggers #list_songs" do
+      allow(music_library_controller).to receive(:gets).and_return("list songs", "exit")
 
-    output = capture_puts {run_file("./bin/musiclibrary")}
+      expect(music_library_controller).to receive(:list_songs)
 
-    expect(output).to include("1. Action Bronson - Larry Csonka - indie")
-    expect(output).to include("2. Real Estate - Green Aisles - country")
-    expect(output).to include("3. Real Estate - It's Real - hip-hop")
-    expect(output).to include("4. Thundercat - For Love I Come - dance")
+      capture_puts { music_library_controller.call }
+    end
   end
 
-  it 'allows a user to list artists' do
-    music_library_controller = MusicLibraryController.new("./spec/fixtures/mp3s")
+  describe "'list artists'" do
+    it "triggers #list_artists" do
+      allow(music_library_controller).to receive(:gets).and_return("list artists", "exit")
 
-    expect(MusicLibraryController).to receive(:new).and_return(music_library_controller)
-    expect(music_library_controller).to receive(:gets).and_return("list artists", "exit")
+      expect(music_library_controller).to receive(:list_artists)
 
-    output = capture_puts {run_file("./bin/musiclibrary")}
-
-    expect(output).to include("Action Bronson")
-    expect(output).to include("Real Estate")
-    expect(output).to include("Thundercat")
+      capture_puts { music_library_controller.call }
+    end
   end
 
-  it 'allows a user to list genres' do
-    music_library_controller = MusicLibraryController.new("./spec/fixtures/mp3s")
+  describe "'list genres'" do
+    it "triggers #list_genres" do
+      allow(music_library_controller).to receive(:gets).and_return("list genres", "exit")
 
-    expect(MusicLibraryController).to receive(:new).and_return(music_library_controller)
-    expect(music_library_controller).to receive(:gets).and_return("list genres", "exit")
+      expect(music_library_controller).to receive(:list_genres)
 
-    output = capture_puts {run_file("./bin/musiclibrary")}
-
-    expect(output).to include("indie")
-    expect(output).to include("country")
-    expect(output).to include("hip-hop")
-    expect(output).to include("dance")
+      capture_puts { music_library_controller.call }
+    end
   end
 
-  it 'allows a user to play a song' do
-    music_library_controller = MusicLibraryController.new("./spec/fixtures/mp3s")
+  describe "'list artist'" do
+    it "triggers #list_songs_by_artist" do
+      allow(music_library_controller).to receive(:gets).and_return("list artist", "exit")
 
-    expect(MusicLibraryController).to receive(:new).and_return(music_library_controller)
-    expect(music_library_controller).to receive(:gets).and_return("play song", "1", "exit")
+      expect(music_library_controller).to receive(:list_songs_by_artist)
 
-    output = capture_puts {run_file("./bin/musiclibrary")}
-
-    expect(output).to include("Playing Action Bronson - Larry Csonka - indie")
+      capture_puts { music_library_controller.call }
+    end
   end
 
-  it 'allows a user to list an artist\'s songs' do
-    music_library_controller = MusicLibraryController.new("./spec/fixtures/mp3s")
+  describe "'list genre'" do
+    it "triggers #list_songs_by_genre" do
+      allow(music_library_controller).to receive(:gets).and_return("list genre", "exit")
 
-    expect(MusicLibraryController).to receive(:new).and_return(music_library_controller)
-    expect(music_library_controller).to receive(:gets).and_return("list artist", "Real Estate", "exit")
+      expect(music_library_controller).to receive(:list_songs_by_genre)
 
-    output = capture_puts {run_file("./bin/musiclibrary")}
-
-    expect(output).to include("Real Estate - Green Aisles - country")
-    expect(output).to include("Real Estate - It's Real - hip-hop")
+      capture_puts { music_library_controller.call }
+    end
   end
 
-  it 'allows a user to list a genre\'s songs' do
-    music_library_controller = MusicLibraryController.new("./spec/fixtures/mp3s")
+  describe "'play song'" do
+    it "triggers #play_song" do
+      allow(music_library_controller).to receive(:gets).and_return("play song", "2", "exit")
 
-    expect(MusicLibraryController).to receive(:new).and_return(music_library_controller)
-    expect(music_library_controller).to receive(:gets).and_return("list genre", "dance", "exit")
+      expect(music_library_controller).to receive(:play_song)
 
-    output = capture_puts {run_file("./bin/musiclibrary")}
-
-    expect(output).to include("Thundercat - For Love I Come - dance")
+      capture_puts { music_library_controller.call }
+    end
   end
 end
