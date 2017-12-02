@@ -1,3 +1,4 @@
+require "pry"
 context "Song" do
   let!(:song) { Song.create("In the Aeroplane Over the Sea") }
 
@@ -29,7 +30,7 @@ context "Song" do
 
     it "invokes .create instead of re-coding the same functionality" do
       expect(Song).to receive(:create).with("Kaohsiung Christmas")
-
+      # binding.pry
       Song.find_or_create_by_name("Kaohsiung Christmas")
     end
   end
