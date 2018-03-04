@@ -1,6 +1,6 @@
 require_relative 'concerns/findable.rb'
 class Song
-  attr_accessor :name, :artist
+  attr_accessor :name, :artist, :genre
   @@all = []
 
   def initialize(name, artist = nil, genre = nil)
@@ -45,6 +45,7 @@ def self.new_from_filename(filename)
 
   new(song_name, artist, genre)
 end
+
 def self.create_from_filename(filename)
   new_from_filename(filename).tap{ |s| s.save }
 end
