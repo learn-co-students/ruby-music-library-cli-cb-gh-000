@@ -18,7 +18,7 @@ class Song
 
   def genre=(genre)
     @genre = genre
-    genre.add_song(self)
+    genre.songs << self unless genre.songs.include?(self)
   end
 
   def save
@@ -38,4 +38,16 @@ class Song
   def self.destroy_all
     @@all.clear
   end
+
+  def self.new_from_filename(file)
+    artist_name, song_name, genre_title = file.sub('.mp3','').split(' - ')
+    artist = Artist.find_or_create_by_name(artist_name)
+    genre = Genre.find_or_create_by_name(genre_title)
+    new(song_name,artist,genre)
+  end
+
+  def self.create_from_filename(file)
+    new_from_filename(file).tap{|o| o.save}
+  end
+
 end

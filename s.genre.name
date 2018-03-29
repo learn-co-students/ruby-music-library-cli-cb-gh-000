@@ -1,0 +1,41 @@
+=> [32m#<Genre:0x000000026d56d0[0m
+ @name[32m=[0m[31m[1;31m"[0m[31mfolk[1;31m"[0m[31m[0m,
+ @songs[32m=[0m
+  [[32m#<Song:0x000000026d5658[0m
+    @artist[32m=[0m
+     [32m#<Artist:0x000000026d57e8[0m
+      @name[32m=[0m[31m[1;31m"[0m[31mCass McCombs[1;31m"[0m[31m[0m,
+      @songs[32m=[0m[[32m#<Song:0x000000026d5658[0m ...[32m>[0m][32m>[0m,
+    @genre[32m=[0m[32m#<Genre:0x000000026d56d0[0m ...[32m>[0m,
+    @name[32m=[0m[31m[1;31m"[0m[31mCounty Line[1;31m"[0m[31m[0m[32m>[0m,
+   [32m#<Song:0x000000026d4e38[0m
+    @artist[32m=[0m
+     [32m#<Artist:0x000000026d4ff0[0m
+      @name[32m=[0m[31m[1;31m"[0m[31mBob Dylan[1;31m"[0m[31m[0m,
+      @songs[32m=[0m
+       [[32m#<Song:0x000000026d4e38[0m ...[32m>[0m,
+        [32m#<Song:0x000000026c6ec8[0m
+         @artist[32m=[0m[32m#<Artist:0x000000026d4ff0[0m ...[32m>[0m,
+         @genre[32m=[0m[32m#<Genre:0x000000026d56d0[0m ...[32m>[0m,
+         @name[32m=[0m[31m[1;31m"[0m[31mMasters of War[1;31m"[0m[31m[0m[32m>[0m][32m>[0m,
+    @genre[32m=[0m[32m#<Genre:0x000000026d56d0[0m ...[32m>[0m,
+    @name[32m=[0m[31m[1;31m"[0m[31mBallad of a Thin Man[1;31m"[0m[31m[0m[32m>[0m,
+   [32m#<Song:0x000000026d63f0[0m
+    @artist[32m=[0m
+     [32m#<Artist:0x000000026d4168[0m
+      @name[32m=[0m[31m[1;31m"[0m[31mAlpha 9[1;31m"[0m[31m[0m,
+      @songs[32m=[0m[[32m#<Song:0x000000026d63f0[0m ...[32m>[0m][32m>[0m,
+    @genre[32m=[0m[32m#<Genre:0x000000026d56d0[0m ...[32m>[0m,
+    @name[32m=[0m[31m[1;31m"[0m[31mBliss[1;31m"[0m[31m[0m[32m>[0m,
+   [32m#<Song:0x000000026c6ec8[0m
+    @artist[32m=[0m
+     [32m#<Artist:0x000000026d4ff0[0m
+      @name[32m=[0m[31m[1;31m"[0m[31mBob Dylan[1;31m"[0m[31m[0m,
+      @songs[32m=[0m
+       [[32m#<Song:0x000000026d4e38[0m
+         @artist[32m=[0m[32m#<Artist:0x000000026d4ff0[0m ...[32m>[0m,
+         @genre[32m=[0m[32m#<Genre:0x000000026d56d0[0m ...[32m>[0m,
+         @name[32m=[0m[31m[1;31m"[0m[31mBallad of a Thin Man[1;31m"[0m[31m[0m[32m>[0m,
+        [32m#<Song:0x000000026c6ec8[0m ...[32m>[0m][32m>[0m,
+    @genre[32m=[0m[32m#<Genre:0x000000026d56d0[0m ...[32m>[0m,
+    @name[32m=[0m[31m[1;31m"[0m[31mMasters of War[1;31m"[0m[31m[0m[32m>[0m][32m>[0m
