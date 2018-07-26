@@ -1,3 +1,4 @@
+
 require "spec_helper"
 
 describe "Associations — Artist and Genre:" do
