@@ -1,12 +1,15 @@
-class Song 
+class Song
   attr_accessor :name
   attr_reader :artist
+  attr_reader :genre
   @@all = []
-  def initialize(name, artist = nil)
+  def initialize(name, artist = nil, genre = "")
     @name = name
-    # if artist != nil
-      artist=(artist)
-    # end
+    @artist = artist
+    if genre != nil
+      @genre = genre
+    end
+    # instance_variable_set("@genre", genre)
   end
   
   def self.all 
@@ -30,5 +33,13 @@ class Song
   def artist=(artist)
     artist.add_song(self)
     @artist = artist
+  end
+  
+  def genre=(genre)
+    @genre = genre
+    if !genre.songs.include?(self)
+      genre.songs << self
+    end
+    @genre
   end
 end
