@@ -3,13 +3,14 @@ class Song
   attr_reader :artist
   attr_reader :genre
   @@all = []
-  def initialize(name, artist = nil, genre = "")
+  def initialize(name, artist = nil, genre = nil)
     @name = name
-    @artist = artist
-    if genre != nil
-      @genre = genre
+    if artist != nil
+      self.artist = artist
     end
-    # instance_variable_set("@genre", genre)
+    if genre != nil 
+      self.genre = genre
+    end
   end
   
   def self.all 
@@ -41,5 +42,23 @@ class Song
       genre.songs << self
     end
     @genre
+  end
+  
+  def self.find_by_name(name)
+    self.all.each{|song|
+      if song.name == name
+        return song
+      end
+    }
+    return nil
+  end
+  
+  def self.find_or_create_by_name(name)
+    if self.find_by_name(name) == nil
+      self.create(name)
+    else
+      return self.find_by_name(name)
+      
+    end
   end
 end
