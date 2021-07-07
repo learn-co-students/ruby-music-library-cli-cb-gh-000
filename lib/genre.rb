@@ -1,0 +1,27 @@
+
+
+class Genre
+  extend Memorable::ClassMethods, Concerns::Findable
+  include Memorable::InstanceMethods
+
+  @@all = []
+  attr_accessor :name, :songs
+
+
+  def initialize(name)
+    @name = name
+    @songs = []
+  end
+
+  def artists
+    artists = []
+    @songs.each {|song| artists << song.artist if artists.include?(song.artist) == false }
+    artists
+  end
+
+  def self.all
+    @@all
+  end
+
+
+end
